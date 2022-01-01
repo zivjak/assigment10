@@ -1,0 +1,102 @@
+body {
+    background-color: rgb(white);
+}
+
+#GridContainer {
+    display: grid;
+    grid-template-areas:
+        'header header header'
+        'left main button'
+        'left main button'
+        'li main button'
+        ;
+}
+
+#Item1 {
+    grid-area: header;
+    width: 100%;
+    background-color: yellow;
+    height: 33vh;
+    padding: 10px;
+}
+
+#Item2 {
+    grid-area: left;
+    width: 100%;
+    background-color: blue;
+    height: 66vh;
+}
+
+#Item3 {
+    grid-area: main;
+    width: 100%;
+    background-color: red;
+    height: 66vh;
+}
+
+button{
+    grid-area: button;
+    height: 20%;
+    font-size: 50px;
+    background-color: yellow;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-iteration-count: 5;
+}
+
+
+@keyframes blink {
+    0% {background-color: yellow; border-radius: 0%;}
+    25% {background-color: white; border-radius: 50%;}
+    50% {background-color: yellow; border-radius: 100%;}
+    75% {background-color: white; border-radius: 50%;}
+    100% {background-color: yellow;border-radius: 0%;}
+}
+
+/*RWD*/
+@media only screen and (max-width: 600px){
+    body{background-color:green;}
+    #GridContainer {
+        display: grid;
+        grid-template-areas:
+            'header'
+            'left'
+            'main'
+            'button'
+            'li'
+            ;
+    }
+}
+
+li {list-style-type: none;
+    font-size: 16pt;
+    grid-area: li;
+    }
+    .mail {
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 600px;
+    background :
+    #D8F1F8;
+    border: 1px soild
+    silver;
+    }
+    .mail h2 {
+    margin-left: 38px;
+    }
+    input {
+    font-size: 20pt;
+    }
+    input:focus, textarea:focus{
+    background-color:
+    lightyellow;
+    }
+    input submit {
+    font-size: 12pt;
+    }
+    .rq {
+    color:
+    #FF0000;
+    font-size: 10pt;
+    }
