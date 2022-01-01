@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block tohen %}
+    <title>Assigment 9</title>
+    <h2>Search form</h2>
+    <form action="/assignment9"  method="get">
+        User key: <input name="user_key" type="text">
+        <input type="submit" name="search" value="search">
+    </form>
+
+     {% if u_name %}
+         <h3> the full details of the user are:</h3>
+         <h4> name: {{ u_name }} </h4>
+         <h4> email: {{ email }} </h4>
+         <h4> age: {{ age }} </h4>
+     {% else  %}
+         {% if users %}
+             <h3> full list: </h3>
+             <ul>
+             {% for id, info in users.items() %}
+                  <li>  {{ id }} </li>
+                   {% for key in info %}
+                      {{ key }} : {{ info[key] }} |
+                  {% endfor %}
+                   <p></p>
+             {% endfor %}
+             </ul>
+         {% endif %}
+         {% if not_in %}
+             <h3>The User does not exist, try to search again </h3>
+         {% endif %}
+    {% endif %}
+
+    <hr>
+
+    <h2>Registration form</h2>
+    {% if session.user_nickname %}
+        <h3> Welcome ,{{ session.user_nickname }} !</h3>
+        <button onclick="location.href='/logout'">
+        Log out
+        </button>
+    {% else %}
+        <h3>Log in my friend:</h3>
+        <form action="/assignment9" method="POST">
+            User nickname: <input name="user_nickname" type="text">
+            Password: <input name="password" type="password">
+            <input type="submit" name="Login" value="Login">
+        </form>
+    {% endif %}
+
+{% endblock %}
+
+

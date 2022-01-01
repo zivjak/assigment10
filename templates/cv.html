@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/cv.css">
+    <script src="/static/cv.js"></script>
+    <title>Document</title>
+</head>
+<h1></h1>
+<body>
+    <div id="GridContainer">
+        <div id="Item1">Potin CV</div>
+        <div id="Item2"><img src="/static/Владимир_Путин_(24-08-2021)_(cropped).jpg" alt="This is an image of putin"  width="500" height="300"></div>
+        <div id="Item3">Vladimir Vladimirovich Putin[c] (born 7 October 1952) is a Russian politician and former intelligence
+            officer who is serving as the current president of Russia since 2012,
+            previously being in the office from 1999 until 2008.
+            [7][d] He was also prime minister from 1999 to 2000 and again from 2008 to 2012.
+            As of 2021, Putin is the second-longest serving European president, after Alexander Lukashenko of Belarus.</div>
+            <button id="Button" onclick="thankyou()">Click here</button>
+        <div class="mail">
+            <h2>Contact us: Input an email and Submit</h2>
+            <form name="form1" action="#">
+            <ul>
+            <li><input type='text' name='text1'/></li>
+            <li>&nbsp;</li>
+            <li class="submit"><input type="submit" name="submit" value="Submit" onclick="ValidateEmail(document.form1.text1)"/></li>
+            <li>&nbsp;</li>
+            </ul>
+            </form>
+            </div>
+            <script src="cv.js"></script>
+    </div>
+</body>
+</html>

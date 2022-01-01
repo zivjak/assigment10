@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+{% block tohen %}
+    {{ super() }}
+<title>hobbies</title>
+<h2>climbing</h2>
+<h3>years of climbing {{ years |default('unknown', true) | upper()}}</h3>
+{% if years == '10 years'%}
+    <h1>wow you climbing a lot of years!</h1>
+    {% else %}
+    <h1> keep training!</h1>
+{% endif %}
+
+<h2>List of my hobbis:</h2>
+<ul>
+    {% for hobby in hobbies%}
+        <li>{{ hobby | default('smile', true) | lower()}}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
